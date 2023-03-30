@@ -52,7 +52,7 @@ const AddPlato = () => {
   
     const navigate = useNavigate();
     const userStore= useSelector((store) => store.userStore);
-    useEffect(()) => {
+    useEffect(() => {
       if (userStore.admin) {
         console.log(true);
       } else {
@@ -63,12 +63,12 @@ const AddPlato = () => {
       dispatch(actionGetrestaurantesAsync());
     }, [dispatch]);
     console.log(restaurantes);
-    const restaurantesProperty = restaurantes.map((item, index) => item.name);
+    const restaurantesProperty = restaurantes.map((item) => item.name);
     console.log(restaurantesProperty);
     const {
       register,
       handleSubmit,
-      required,
+      // required,
       formState: { errors },
     } = useForm({});
     const onSubmit = async (data) => {
